@@ -17,6 +17,14 @@ This image contains textlint rules as follows:
 
 ### Installation
 
+To pull:
+
+```sh
+$ docker pull miy4/textlint
+```
+
+To build:
+
 ```sh
 $ git clone https://github.com/miy4/docker-textlint.git
 $ cd docker-textlint
