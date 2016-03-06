@@ -1,7 +1,7 @@
 FROM gliderlabs/alpine:3.3
 
 RUN apk add --no-cache nodejs \
-    && npm install -g textlint@5.4.1 \
+    && npm install -g textlint@5.5.5 \
     && npm install -g \
        textlint-rule-preset-jtf-style \
        textlint-rule-max-ten \
