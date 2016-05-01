@@ -1,6 +1,6 @@
 FROM gliderlabs/alpine:3.3
 
-ENV TEXTLINT_VERSION=6.3.0
+ENV TEXTLINT_VERSION=6.4.0
 RUN apk add --no-cache nodejs \
     && npm install -g textlint@${TEXTLINT_VERSION} \
     && npm install -g \
