@@ -1,4 +1,5 @@
 FROM gliderlabs/alpine:3.3
+MAINTAINER miy4 <miy4t7l@gmail.com>
 
 ENV TEXTLINT_VERSION=6.4.0
 RUN apk add --no-cache nodejs \
