@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:3.3
+FROM gliderlabs/alpine:3.4
 MAINTAINER miy4 <miy4t7l@gmail.com>
 
 ENV TEXTLINT_VERSION=7.1.0
