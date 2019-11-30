@@ -5,6 +5,8 @@ ENV TEXTLINT_VERSION=11.5.0
 RUN apk add --no-cache nodejs nodejs-npm \
     && npm install -g textlint@${TEXTLINT_VERSION} \
     && npm install -g \
+       textlint-rule-prh \
+       textlint-rule-no-todo \
        textlint-rule-preset-jtf-style \
        textlint-rule-max-ten \
        textlint-rule-no-doubled-joshi \

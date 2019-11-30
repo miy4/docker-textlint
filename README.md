@@ -8,6 +8,8 @@ Docker container with textlint.
 
 This image contains textlint rules as follows:
 
+- [textlint-rule-prh](https://www.npmjs.com/package/textlint-rule-prh)
+- [textlint-rule-no-todo](https://www.npmjs.com/package/textlint-rule-no-todo)
 - [textlint-rule-preset-jtf-style](https://www.npmjs.com/package/textlint-rule-preset-jtf-style)
 - [textlint-rule-max-ten](https://www.npmjs.com/package/textlint-rule-max-ten)
 - [textlint-rule-no-doubled-joshi](https://www.npmjs.com/package/textlint-rule-no-doubled-joshi)
