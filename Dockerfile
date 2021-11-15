@@ -1,6 +1,6 @@
 FROM docker.io/alpine:3.14
 
-ENV TEXTLINT_VERSION=7.1.4
+ENV TEXTLINT_VERSION=12.0.2
 RUN apk add --no-cache nodejs npm \
     && npm install -g textlint@${TEXTLINT_VERSION} \
     && npm install -g \
