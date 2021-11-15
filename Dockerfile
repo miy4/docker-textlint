@@ -1,8 +1,7 @@
-FROM gliderlabs/alpine:3.4
-MAINTAINER miy4 <miy4t7l@gmail.com>
+FROM docker.io/alpine:3.14
 
 ENV TEXTLINT_VERSION=7.1.4
-RUN apk add --no-cache nodejs \
+RUN apk add --no-cache nodejs npm \
     && npm install -g textlint@${TEXTLINT_VERSION} \
     && npm install -g \
        textlint-rule-preset-jtf-style \
