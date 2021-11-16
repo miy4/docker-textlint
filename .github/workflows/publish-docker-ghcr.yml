@@ -34,7 +34,7 @@ jobs:
       - name: Push Docker image to ghcr.io
         run: |
           TAG=${{ github.ref }}
-          if [[ ${TAG} == refs/tags/master ]]; then
+          if [[ ${TAG} == refs/heads/master ]]; then
               TAG='latest'
           else
               TAG="${TAG##*/}"
