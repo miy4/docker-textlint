@@ -1,0 +1,45 @@
+name: Publish Docker image to GitHub Container Registry
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+    paths:
+      - Dockerfile
+
+env:
+  DOCKER_IMAGE: textlint
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Test that the build completes successfully
+        run: docker build .
+
+  publish:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Build Docker image
+        run: docker build --tag "${DOCKER_IMAGE}" .
+      # You need an access token with `write:packages` and `read:packages` scope
+      - name: Login to ghcr.io
+        run: docker login --username ${{ github.actor }} --password-stdin https://ghcr.io <<< ${{ secrets.GH_TOKEN_GHCR }}
+      - name: Push Docker image to ghcr.io
+        run: |
+          TAG=${{ github.ref }}
+          if [[ ${TAG} == refs/tags/master ]]; then
+              TAG='latest'
+          else
+              TAG="${TAG##*/}"
+          fi
+          SOURCE_IMAGE="${DOCKER_IMAGE}"
+          TARGET_IMAGE=ghcr.io/${{ github.repository_owner }}/${DOCKER_IMAGE}:${TAG}
+          docker tag "${SOURCE_IMAGE}" "${TARGET_IMAGE}"
+          docker push "${TARGET_IMAGE}"

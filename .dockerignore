@@ -1,4 +1,5 @@
 .git
+.github
 .textlintrc
 README.md
 run-textlint
