@@ -44,3 +44,8 @@ $ /path/to/run-textlint <TEXTLINT_ARGS>
 ```
 
 `docker run` and `run-textlint` accept and pass a set of parameters to [textlint CLI](https://github.com/textlint/textlint#cli).
+
+### License
+
+MIT
+
